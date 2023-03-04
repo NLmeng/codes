@@ -1,5 +1,37 @@
 # Useful Syntax/Command/Codes
 
+
+## **Git**
+
+#### Reverting Commits
+You could get merge conflicts, if you've modified things which were changed since the commit you reset to:
+
+    `git revert <commit_id> <commit_id> <commit_id> ...`
+
+    **resolves issues**
+
+    `git commit -m ...`
+
+This will destroy any local modifications: `git reset --hard <commit_id>` (Don't do it if you have uncommitted work you want to keep.)
+
+#### Alternative
+    `git stash`
+
+    `git reset --hard <commit_id>`
+
+    `git stash pop`
+    
+#### Branching Out
+
+`git pull`
+
+`git switch main`
+
+`git checkout -b <new_branch> main`
+
+
+
+
 ## **vi** Editor
 - **$ vi <filename>**— Open or edit a file.
 - **i** — Switch to Insert mode.
@@ -28,23 +60,3 @@
 - **j** — Move down one line.
 - **k** — Move up one line.
 - **l** — Move right one character.
-
-## **Git**
-
-#### Reverting Commits
-You could get merge conflicts, if you've modified things which were changed since the commit you reset to:
-
-    `git revert <commit_id> <commit_id> <commit_id> ...`
-
-    **resolves issues**
-
-    `git commit -m ...`
-
-This will destroy any local modifications: `git reset --hard <commit_id>` (Don't do it if you have uncommitted work you want to keep.)
-
-#### Alternative
-    `git stash`
-
-    `git reset --hard <commit_id>`
-
-    `git stash pop`
