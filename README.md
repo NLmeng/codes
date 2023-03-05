@@ -29,6 +29,12 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
 
 `git checkout -b <new_branch> main`
 
+#### Merge into Branch
+
+`git checkout <branch_name>`
+
+`git merge origin/main`
+
 
 
 
