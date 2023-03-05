@@ -12,7 +12,9 @@ You could get merge conflicts, if you've modified things which were changed sinc
 
     `git commit -m ...`
 
+
 This will destroy any local modifications: `git reset --hard <commit_id>` (Don't do it if you have uncommitted work you want to keep.)
+
 
 #### Alternative
     `git stash`
@@ -20,6 +22,7 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
     `git reset --hard <commit_id>`
 
     `git stash pop`
+    
     
 #### Branching Out
 
@@ -29,11 +32,13 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
 
 `git checkout -b <new_branch> main`
 
+
 #### Merge into Branch
 
 `git checkout <branch_name>`
 
 `git merge origin/main`
+
 
 
 
