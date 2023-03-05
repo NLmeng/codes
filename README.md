@@ -40,7 +40,19 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
 `git merge origin/main`
 
 
+#### Setting email for a single repository
 
+    Change the current working directory to the local repository where you want to configure the email address:
+
+        `git config user.email <email>`
+
+    Confirm that you have set the email address correctly in Git:
+
+        `git config user.email`
+
+#### Setting email globally
+
+`git config --global user.email <email>`
 
 
 ## **vi** Editor
