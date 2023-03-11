@@ -6,49 +6,50 @@
 #### Reverting Commits
 You could get merge conflicts, if you've modified things which were changed since the commit you reset to:
 
-    `git revert <commit_id> <commit_id> <commit_id> ...`
+    git revert <commit_id> <commit_id> <commit_id> ...
 
     **resolves issues**
 
-    `git commit -m ...`
+    git commit -m ...
 
 
 This will destroy any local modifications: `git reset --hard <commit_id>` (Don't do it if you have uncommitted work you want to keep.)
 
 
 #### Alternative
-    `git stash`
+    
+    git stash
 
-    `git reset --hard <commit_id>`
+    git reset --hard <commit_id>
 
-    `git stash pop`
+    git stash pop
     
     
 #### Branching Out
 
-`git pull`
+    git pull
 
-`git switch main`
+    git switch main
 
-`git checkout -b <new_branch> main`
+    git checkout -b <new_branch> main
 
 
 #### Merge into Branch
 
-`git checkout <branch_name>`
+    git checkout <branch_name>
 
-`git merge origin/main`
+    git merge origin/main
 
 
 #### Setting email for a single repository
 
     Change the current working directory to the local repository where you want to configure the email address:
 
-        `git config user.email <email>`
+        git config user.email <email>
 
     Confirm that you have set the email address correctly in Git:
 
-        `git config user.email`
+        git config user.email
 
 #### Setting email globally
 
