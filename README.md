@@ -55,6 +55,28 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
 
 `git config --global user.email <email>`
 
+#### Rewriting Commit History (changing your OWN previous commit histories)
+
+    git filter-branch -f --commit-filter '
+      if [ "$GIT_AUTHOR_EMAIL" = "wrong@email1.com" ] || [ "$GIT_AUTHOR_EMAIL" = "wrong@email2.com" ];
+      then
+              GIT_AUTHOR_NAME="FirstName LastName";
+              GIT_AUTHOR_EMAIL="correct@email.com";
+              git commit-tree "$@";
+      else
+              git commit-tree "$@";
+      fi' HEAD
+      
+    git push --force origin
+    
+#### Check all emails in commit history
+`git log --pretty="%an <%ae>" --all | sort -u`
+
+#### Check all remotes
+`git remote -v`
+
+#### Adding remotes
+`git remote add <name> <url>`
 
 ## **vi** Editor
 - **$ vi <filename>**— Open or edit a file.
