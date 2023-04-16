@@ -69,6 +69,8 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
       
     git push --force origin
     
+**this is strictly for associating your past commits to your current GitHub, useful incases where you did not set up your SSH in the past**
+    
 #### Check all emails in commit history
 `git log --pretty="%an <%ae>" --all | sort -u`
 
