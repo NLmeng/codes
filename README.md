@@ -70,9 +70,16 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
     git push --force origin
     
 **this is strictly for associating your past commits to your current GitHub, useful incases where you did not set up your SSH in the past**
-    
+
+`%h=commit-code, %s=commit-message, %b=all details`
 #### Check all emails in commit history
 `git log --pretty="%an <%ae>" --all | sort -u`
+
+#### Check all commit by an author
+`git log --author="AUTHOR" --pretty=format:"%h - %s"`
+
+#### Check all co-authored commit by an author
+`git log --grep="Co-authored-by: AUTHOR" --all --pretty='%h - %s'`
 
 #### Check all remotes
 `git remote -v`
@@ -108,6 +115,3 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
 - **j** — Move down one line.
 - **k** — Move up one line.
 - **l** — Move right one character.
-
-
-## tbd
