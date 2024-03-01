@@ -2,27 +2,6 @@
 
 
 ## **Git**
-
-#### Reverting Commits
-You could get merge conflicts, if you've modified things which were changed since the commit you reset to:
-
-    git revert <commit_id> <commit_id> <commit_id> ...
-
-    **resolves issues**
-
-    git commit -m ...
-
-
-This will destroy any local modifications: `git reset --hard <commit_id>` (Don't do it if you have uncommitted work you want to keep.)
-
-
-#### Alternative
-    
-    git stash
-
-    git reset --hard <commit_id>
-
-    git stash pop
     
     
 #### Branching Out
@@ -54,6 +33,54 @@ This will destroy any local modifications: `git reset --hard <commit_id>` (Don't
 #### Setting email globally
 
 `git config --global user.email <email>`
+
+Here's how to include the instructions for cloning and pushing a repository using Git, specifically focusing on the use of bare repositories and mirror pushing for transferring or duplicating repositories. This addition complements the section on useful Git commands and practices.
+
+
+#### Reverting Commits
+You could get merge conflicts, if you've modified things which were changed since the commit you reset to:
+
+    git revert <commit_id> <commit_id> <commit_id> ...
+
+    **resolves issues**
+
+    git commit -m ...
+
+This will destroy any local modifications: `git reset --hard <commit_id>` (Don't do it if you have uncommitted work you want to keep.)
+
+#### Alternative
+    
+    git stash
+
+    git reset --hard <commit_id>
+
+    git stash pop
+
+
+#### Clone a Repository (Bare Clone)
+To clone a repository without a working directory (bare clone), which is useful for transferring a repository:
+
+    git clone --bare <repository_url>
+
+This command creates a bare clone of the repository. A bare clone is essentially a copy of the repository's .git directory and does not include any of the files in the working directory.
+
+#### Push to New Repository (Mirror Push)
+After creating a bare clone, use the following command to mirror-push to a new repository. This is useful for transferring a repository to a new location while preserving its Git history:
+
+    git push --mirror <new_repository_url>
+
+This command pushes all refs (branches, tags, etc.) along with their respective commits to the new repository. It's an effective way to transfer the entire repository to a new location.
+
+#### Cleanup After Transfer
+After successfully mirror-pushing to a new repository, you may want to remove the temporary local repository created during the process:
+
+    cd ..
+    rm -rf <bare_repository_folder>
+
+Replace `<bare_repository_folder>` with the name of the folder created during the bare clone process. This step is optional but helps in cleaning up unnecessary files from your local machine.
+
+This workflow ensures that the entire repository, including all its branches, tags, and commit history, is transferred to the new location.
+
 
 #### Rewriting Commit History (changing your OWN previous commit histories)
 
